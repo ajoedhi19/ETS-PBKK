@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'born_date',
+        'address',
+        'phone_number'
     ];
 
     /**
@@ -41,4 +44,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function komentar()
+    {
+        return $this->hasMany(komentar::class);
+    }
+    public function detail_pemesanan()
+    {
+        return $this->hasMany(detail_pemesanan::class);
+    }
 }
