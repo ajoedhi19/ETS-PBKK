@@ -22,27 +22,26 @@
                     <li><a href="collaboration" class="nav-link {{ ($title === "collaboration") ? 'activate' : '' }}">collaboration</a></li>
 
                 </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="login" class = "nav-link"><i class="bi bi-box-arrow-right"></i>login</a>
+                    </li>    
+                </ul>
                 <!--/search-right-->
             </div>
 
         </nav>
     </div>
-    <!-- search -->
-    <div class="search">
-        <div class="cd-main-header">
-            <ul class="cd-header-buttons">
-                <li>
-                    <a class="cd-search-trigger" href="#cd-search">
-                        <span></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div id="cd-search" class="cd-search">
-            <form action="#" method="post">
-                <input name="Search" type="search" placeholder="Click enter after typing...">
-            </form>
-        </div>
-    </div>
+
+    
     <!-- //search -->
 </header>
+
+<script>
+    on('click', '.navbar .dropdown > a', function(e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault()
+      this.nextElementSibling.classList.toggle('dropdown-active')
+    }
+  }, true)
+</script>

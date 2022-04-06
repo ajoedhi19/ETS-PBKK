@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="/css/style-starter.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <a href="/fonts/fontawesome-webfont.eot"></a>
     <a href="/fonts/fontawesome-webfont.ttf"></a>
     <a href="/fonts/fontawesome-webfont.woff"></a>

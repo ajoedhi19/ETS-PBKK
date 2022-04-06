@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('born_date');
             $table->string('address');
+            $table->string('gender');
             $table->string('phone_number');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -26,6 +27,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        
     }
 
     /**
