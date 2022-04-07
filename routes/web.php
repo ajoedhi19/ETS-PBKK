@@ -52,3 +52,8 @@ Route::get('/login', [LoginController::class, 'index'],function () {
 Route::get('/register', [RegisterController::class, 'index'],function () {
     return view('register');
 })->name('register');
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
