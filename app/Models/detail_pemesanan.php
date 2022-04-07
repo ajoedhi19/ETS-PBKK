@@ -18,13 +18,14 @@ class detail_pemesanan extends Model
     protected $casts = [
         'tanggal_pemesanan' => 'datetime',
     ];
-
+    protected $guarded = ['id'];
     public function User()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'id_customer','id');
         
         
     }
+    public $timestamps = false;
     public function service()
     {
         return $this->belongsTo(service::class);

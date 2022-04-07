@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ServeController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\DashboardBarangController;
+use App\Http\Controllers\DashboardServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,4 +65,14 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 Route::post('/logout', [LoginController::class, 'logout']);
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard', function () {
+    return view('dashboard.index',[
+        'title' => 'dashboard'
+    ]);
+})->middleware('auth');
+
+
+Route::resource('/dashboard/dashboardbarang', DashboardBarangController::class)->middleware('auth');
+Route::resource('/dashboard/dashboardservice', DashboardServiceController::class)->middleware('auth');
+Route::resource('/dashboard/barang', barangController::class)->middleware('auth');
+Route::resource('/dashboard/serve', serveController::class)->middleware('auth');
